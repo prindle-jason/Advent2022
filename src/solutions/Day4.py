@@ -1,6 +1,7 @@
 # https://adventofcode.com/2022/day/4
 from adventutil.DataImport import InputType
 from adventutil.Day import Day
+from adventutil.IntHelper import string_to_ints
 
 YEAR = 2022
 DAY  = 4
@@ -16,8 +17,7 @@ class Day4(Day):
     def partA(self):
         count = 0
         for line in self.lines:            
-            values = [int(i) for i in line.replace('-',',').split(',')]     #Converts "2-4,5-7" to [2,4,5,7]
-                
+            values = string_to_ints(line)    
             if values[0] >= values[2] and values[1] <= values[3]:
                 count += 1
             elif values[0] <= values[2] and values[1] >= values[3]:
@@ -28,7 +28,7 @@ class Day4(Day):
     def partB(self):        
         count = 0
         for line in self.lines:
-            values = [int(i) for i in line.replace('-',',').split(',')]     #Converts "2-4,5-7" to [2,4,5,7]
+            values = string_to_ints(line) 
                     
             for x in range(values[0], values[1]+1):
                 if values[2] <= x <= values[3]:

@@ -16,7 +16,8 @@ class Day3(Day):
     def partA(self):
         sum = 0
         for line in self.lines:
-            comps = [line[:len(line)//2],line[len(line)//2:]]
+            half_len = len(line)//2
+            comps = [line[:half_len],line[half_len:]]
 
             for c in comps[0]:
                 if c in comps[1]:
@@ -26,15 +27,18 @@ class Day3(Day):
         return sum
 
     def partB(self):
-
         sum = 0
-        for x in range(0, len(self.lines),3):
-            comps = self.lines[x:x+3]
 
-            for c in comps[0]:
-                if c in comps[1] and c in comps[2]:
+        #split lines into groups of 3
+        start_indices = range(0,len(self.lines),3)
+        for group in [self.lines[i:i+4] for i in start_indices]:
+
+            for c in group[0]:
+                if c in group[1] and c in group[2]:
                     sum += self.__get_ascii_value(c)
                     break
+
+            group.clear()
 
         return sum
 

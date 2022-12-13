@@ -1,9 +1,8 @@
 # https://adventofcode.com/2022/day/$$$
-from util.DataImport import InputType
-from util.Day import Day
+from adventutil.DataImport import InputType
+from adventutil.Day import Day
 
-YEAR = 2022
-DAY  = $$$
+YEAR, DAY = 2022, $$$
 
 EXPECTED_A = "Unknown"
 EXPECTED_B = "Unknown"

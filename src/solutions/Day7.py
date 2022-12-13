@@ -7,7 +7,7 @@ DAY  = 7
 
 EXPECTED_A = 1583951
 EXPECTED_B = 214171
-INPUT_TYPE = InputType.LIVE_DATA
+INPUT_TYPE = InputType.SAMPLE_DATA
 
 class Day7(Day):
     def __init__(self):
