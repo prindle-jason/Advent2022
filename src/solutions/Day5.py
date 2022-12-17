@@ -6,8 +6,7 @@ from adventutil.IntHelper import string_to_ints
 from collections import deque
 from itertools import product
 
-YEAR = 2022
-DAY  = 5
+YEAR, DAY = 2022, 5
 
 EXPECTED_A = "HNSNMTLHQ"
 EXPECTED_B = "RNLFDJMCT"

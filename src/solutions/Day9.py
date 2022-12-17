@@ -10,16 +10,15 @@ from adventutil.DataImport import InputType
 from adventutil.Day import Day
 from adventutil.Compare import compare
 
-YEAR = 2022
-DAY  = 9
-
+YEAR, DAY = 2022, 9
+ 
 EXPECTED_A = 5878
 EXPECTED_B = 2405
 INPUT_TYPE = InputType.LIVE_DATA
 
 COMMAND_MOVE = {'U': +1j, 'D': -1j, 'L': -1, 'R': +1}
 
-follow_move = lambda lead, follow : complex(compare(lead.real,follow.real) + 1j*compare(lead.imag,follow.imag))
+follow_move = lambda h, t : complex(compare(h.real,t.real) + 1j*compare(h.imag,t.imag))
 
 class Day9(Day):
     def __init__(self):
@@ -37,12 +36,12 @@ class Day9(Day):
         tail_positions = set()
         tail_positions.add(rope[rope_length-1])
         for command in [line.split() for line in self.lines]:
-            for step in range(int(command[1])):
+            for _ in range(int(command[1])):
                 rope[0] += COMMAND_MOVE[command[0]]
 
-                for knot in range(rope_length-1):
-                    if abs(rope[knot]-rope[knot+1]) >= 2:
-                        rope[knot+1] += follow_move(rope[knot],rope[knot+1])
+                for index, (head, tail) in enumerate(zip(rope, rope[1:])):
+                    if abs(head-tail) >= 2:
+                        rope[index+1] += follow_move(head,tail)
 
                 tail_positions.add(rope[rope_length-1])
         return len(tail_positions)

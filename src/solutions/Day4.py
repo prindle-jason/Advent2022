@@ -3,8 +3,7 @@ from adventutil.DataImport import InputType
 from adventutil.Day import Day
 from adventutil.IntHelper import string_to_ints
 
-YEAR = 2022
-DAY  = 4
+YEAR, DAY = 2022, 4
 
 EXPECTED_A = 448
 EXPECTED_B = 794

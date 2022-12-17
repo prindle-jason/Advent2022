@@ -3,8 +3,7 @@ from adventutil.DataImport import InputType
 from adventutil.Day import Day
 from adventutil.GridHelper import get_string_grid
 
-YEAR = 2022
-DAY  = 12
+YEAR, DAY = 2022, 12
 
 EXPECTED_A = 481
 EXPECTED_B = 480

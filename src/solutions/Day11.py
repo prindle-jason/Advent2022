@@ -8,8 +8,7 @@ from adventutil.DataImport import InputType
 from adventutil.Day import Day
 from adventutil.ListHelper import list_split
 
-YEAR = 2022
-DAY  = 11
+YEAR, DAY = 2022, 11
 
 EXPECTED_A = 66802
 EXPECTED_B = 21800916620

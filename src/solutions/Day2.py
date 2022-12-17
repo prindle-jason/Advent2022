@@ -4,8 +4,7 @@ from enum import Enum
 from adventutil.DataImport import InputType
 from adventutil.Day import Day
 
-YEAR = 2022
-DAY  = 2
+YEAR, DAY = 2022, 2
 
 EXPECTED_A = 10624
 EXPECTED_B = 14060

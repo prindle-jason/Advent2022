@@ -2,8 +2,7 @@
 from adventutil.DataImport import InputType
 from adventutil.Day import Day
 
-YEAR = 2022
-DAY  = 6
+YEAR, DAY = 2022, 6
 
 EXPECTED_A = 1892
 EXPECTED_B = 2313
@@ -21,7 +20,7 @@ class Day6(Day):
 
     def __find_marker(self,line,size):
         for x in range(len(line)):
-            if len("".join(set(line[x:x+size]))) == size:
+            if len(set(line[x:x+size])) == size:
                 return x+size
 
 if __name__ == '__main__':

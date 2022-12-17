@@ -2,8 +2,7 @@
 from adventutil.DataImport import InputType
 from adventutil.Day import Day
 
-YEAR = 2022
-DAY  = 7
+YEAR, DAY = 2022, 7
 
 EXPECTED_A = 1583951
 EXPECTED_B = 214171
