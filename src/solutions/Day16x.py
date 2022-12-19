@@ -74,7 +74,7 @@ class Node:
         self.id = id
         self.rate = rate
         self.tunnel_ids = tunnel_ids
-        self._tunnels = None
+        self.tunnels = None
 
     def load_tunnels(self, all_nodes):
         self.tunnels = []

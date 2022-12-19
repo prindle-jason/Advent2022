@@ -1,11 +1,9 @@
 # https://adventofcode.com/2022/day/16
-from dataclasses import dataclass
 from itertools import product
 from adventutil.DataImport import InputType
 from adventutil.Day import Day
-from adventutil.IntHelper import string_to_ints
 
-from Day16x import Graph, Node, Worker
+from Day16x import Graph, Worker
 
 YEAR, DAY = 2022, 16
 
